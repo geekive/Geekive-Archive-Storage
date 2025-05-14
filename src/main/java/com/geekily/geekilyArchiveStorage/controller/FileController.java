@@ -1,0 +1,43 @@
+package com.geekily.geekilyArchiveStorage.controller;
+
+
+
+import java.util.Map;
+
+import javax.annotation.Resource;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.geekily.geekilyArchiveStorage.geekilyCustom.GeekilyFileUploader;
+import com.geekily.geekilyArchiveStorage.geekilyCustom.GeekilyMap;
+import com.geekily.geekilyArchiveStorage.mapper.service.FileService;
+
+@Controller
+@RequestMapping(value = "/upload")
+public class FileController {
+	
+	@Resource
+	FileService fileService;
+
+    @PostMapping("/file")
+    public ResponseEntity<Map<String, Object>> file(@RequestParam("file") MultipartFile multipartFile , @RequestParam("name") String name
+    		, @RequestParam("registrationUser") String registrationUser) {
+        GeekilyMap gMap = null;
+    	try {
+            GeekilyFileUploader gFileUploader = new GeekilyFileUploader(multipartFile);
+            gFileUploader.setFolderName(name);
+            gMap = gFileUploader.uploadFileInDatePath();
+
+            gMap.put("registrationUser", registrationUser);
+            fileService.insertFile(gMap);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ResponseEntity.ok(gMap);
+    }
+}
