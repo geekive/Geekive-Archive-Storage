@@ -1,19 +1,19 @@
-package com.geekily.geekilyArchiveStorage.geekilyCustom;
+package com.geekive.geekiveArchiveStorage.geekiveCustom;
 
 import java.io.File;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.geekily.geekilyArchiveStorage.common.Util;
+import com.geekive.geekiveArchiveStorage.common.Util;
 
-public class GeekilyFileUploader {
+public class GeekiveFileUploader {
 	
 	private MultipartFile 	multipartFile;
 	private String			folderName;
 	private String			fixedPath;
 	private String			dynamicPath;
 	
-	public GeekilyFileUploader(MultipartFile multipartFile) {
+	public GeekiveFileUploader(MultipartFile multipartFile) {
 		super();
 		this.multipartFile 	= multipartFile;
 		this.fixedPath		= Util.getUploadPath();
@@ -23,18 +23,18 @@ public class GeekilyFileUploader {
 		this.folderName = folderName;
 	}
 	
-	public GeekilyMap uploadFile() {
+	public GeekiveMap uploadFile() {
 		this.dynamicPath = (this.folderName != null) ? (this.folderName + File.separator) : "";
 		return upload();
 	}
 
-	public GeekilyMap uploadFileInDatePath() {
+	public GeekiveMap uploadFileInDatePath() {
 		this.dynamicPath = (this.folderName != null) ? (this.folderName + File.separator + Util.getDatePath()) : "";
 		return upload();
 	}
 	
-	private GeekilyMap upload() {
-		GeekilyMap gMap		= new GeekilyMap();
+	private GeekiveMap upload() {
+		GeekiveMap gMap		= new GeekiveMap();
     	String originalName = multipartFile.getOriginalFilename();
     	String storedName	= Util.getFileName(originalName);
     	String fullPath		= this.fixedPath + this.dynamicPath + storedName;

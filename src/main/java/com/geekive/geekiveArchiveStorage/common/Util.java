@@ -1,7 +1,6 @@
-package com.geekily.geekilyArchiveStorage.common;
+package com.geekive.geekiveArchiveStorage.common;
 
 import java.io.File;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +9,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
-import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * @author geekily
+ * @author geekive
  *
  */
 public class Util {
@@ -27,7 +25,7 @@ public class Util {
 	/**
 	 * @name 		isEmpty
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description	check if string variable is null.
 	 */
 	public static boolean isEmpty(String value) {
@@ -37,7 +35,7 @@ public class Util {
 	/**
 	 * @name 		isEmpty
 	 * @date 		2024. 11. 10.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description	check if map variable is null.
 	 */
 	public static boolean isEmpty(Map map) {
@@ -47,7 +45,7 @@ public class Util {
 	/**
 	 * @name 		isNotEmpty
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description check if string variable isn't null.
 	 */
 	public static Boolean isNotEmpty(String value) {
@@ -57,7 +55,7 @@ public class Util {
 	/**
 	 * @name 		isNotEmpty
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description check if map variable isn't null.
 	 */
 	public static Boolean isNotEmpty(Map map) {
@@ -67,7 +65,7 @@ public class Util {
 	/**
 	 * @name 		isLogin
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description check if user is logged in or not.
 	 */
 	public static Boolean isLogin(HttpServletRequest request) {
@@ -82,7 +80,7 @@ public class Util {
 	/**
 	 * @name 		getSubPath
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return sub path of url.
 	 */
 	public static String getSubPath(HttpServletRequest request) {
@@ -92,7 +90,7 @@ public class Util {
 	/**
 	 * @name 		splitSubPath
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description split sub path by "/".
 	 */
 	public static String[] splitSubPath(String subPath) {
@@ -105,7 +103,7 @@ public class Util {
 	/**
 	 * @name 		parseToInt
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description	after checking type of object variable, convert object to integer.
 	 */
 	public static int parseToInt(Object object) {
@@ -122,7 +120,7 @@ public class Util {
 	/**
 	 * @name 		generateUID
 	 * @date 		2024. 8. 31.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return UID without prefix.
 	 */
 	public static String generateUID() {
@@ -132,7 +130,7 @@ public class Util {
 	/**
 	 * @name 		generateUID
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return UID.
 	 */
 	public static String generateUID(String prefix) {
@@ -142,7 +140,7 @@ public class Util {
 	/**
 	 * @name 		getExtension
 	 * @date 		2024. 8. 31.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return file's extension.
 	 */
 	public static String getExtension(String fileName) {
@@ -152,7 +150,7 @@ public class Util {
 	/**
 	 * @name 		getExtension
 	 * @date 		2024. 8. 31.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return file's extension.
 	 */
 	public static String getExtensionWithoutDot(String fileName) {
@@ -162,7 +160,7 @@ public class Util {
 	/**
 	 * @name 		getFileName
 	 * @date 		2024. 4. 4.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return file name.
 	 */
 	public static String getFileName(MultipartFile multipartFile) {
@@ -174,7 +172,7 @@ public class Util {
 	/**
 	 * @name 		getFileName
 	 * @date 		2024. 4. 4.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return file name.
 	 */
 	public static String getFileName(String origianlFileName) {
@@ -185,7 +183,7 @@ public class Util {
 	/**
 	 * @name 		getFileServerUrl
 	 * @date 		2024. 4. 4.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return file server upload url
 	 */
 	public static String getFileServerUploadUrl() {
@@ -195,7 +193,7 @@ public class Util {
 	/**
 	 * @name 		getFileAccessURL
 	 * @date 		2024. 4. 11.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return file access url
 	 */
 	public static String getFileAccessURL() {
@@ -205,7 +203,7 @@ public class Util {
 	/**
 	 * @name 		getUploadPath
 	 * @date 		2024. 4. 9.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return upload path
 	 */
 	public static String getUploadPath() {
@@ -215,7 +213,7 @@ public class Util {
 	/**
 	 * @name 		getDatePath
 	 * @date 		2024. 8. 31.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description return date path
 	 */
 	public static String getDatePath() {
@@ -229,7 +227,7 @@ public class Util {
 	/**
 	 * @name 		hierarchicalSortList
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description sort data in hierarchical order. it's written because MYSQL doesn't have such function like Oracle.
 	 */
 	public static List<Map<String, Object>> hierarchicalSortList(String pkCoulmnName, String parentPkCoulmnName, String depthColumnName, String orderCoulmnName, List<Map<String, Object>> list){
@@ -295,7 +293,7 @@ public class Util {
     /**
      * @name 		sortList
      * @date 		2024. 3. 14.
-     * @author		geekily
+     * @author		geekive
      * @description	this method is used only for the method 'hierarchicalSortList'.
      * 				it's for sorting data.
      */
@@ -331,7 +329,7 @@ public class Util {
 	/**
 	 * @name 		removeUnnecessaryMenu
 	 * @date 		2024. 3. 14.
-	 * @author		geekily
+	 * @author		geekive
 	 * @description this method is used only for the method 'hierarchicalSortList'.
 	 * 				remove unnecessary data after sorting.
 	 */

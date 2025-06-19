@@ -1,10 +1,10 @@
-package com.geekily.geekilyArchiveFile;
+package com.geekive.geekiveArchiveFile;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class GeekilyArchiveFileApplicationTests {
+class GeekiveArchiveFileApplicationTests {
 
 	@Test
 	void contextLoads() {

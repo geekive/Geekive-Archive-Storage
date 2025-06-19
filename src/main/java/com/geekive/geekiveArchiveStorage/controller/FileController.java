@@ -1,4 +1,4 @@
-package com.geekily.geekilyArchiveStorage.controller;
+package com.geekive.geekiveArchiveStorage.controller;
 
 
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.geekily.geekilyArchiveStorage.geekilyCustom.GeekilyFileUploader;
-import com.geekily.geekilyArchiveStorage.geekilyCustom.GeekilyMap;
-import com.geekily.geekilyArchiveStorage.mapper.service.FileService;
+import com.geekive.geekiveArchiveStorage.geekiveCustom.GeekiveFileUploader;
+import com.geekive.geekiveArchiveStorage.geekiveCustom.GeekiveMap;
+import com.geekive.geekiveArchiveStorage.mapper.service.FileService;
 
 @Controller
 @RequestMapping(value = "/upload")
@@ -27,9 +27,9 @@ public class FileController {
     @PostMapping("/file")
     public ResponseEntity<Map<String, Object>> file(@RequestParam("file") MultipartFile multipartFile , @RequestParam("name") String name
     		, @RequestParam("registrationUser") String registrationUser) {
-        GeekilyMap gMap = null;
+    	GeekiveMap gMap = null;
     	try {
-            GeekilyFileUploader gFileUploader = new GeekilyFileUploader(multipartFile);
+    		GeekiveFileUploader gFileUploader = new GeekiveFileUploader(multipartFile);
             gFileUploader.setFolderName(name);
             gMap = gFileUploader.uploadFileInDatePath();
 

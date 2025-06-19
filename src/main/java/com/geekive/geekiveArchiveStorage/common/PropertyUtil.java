@@ -1,4 +1,4 @@
-package com.geekily.geekilyArchiveStorage.common;
+package com.geekive.geekiveArchiveStorage.common;
 
 import org.springframework.beans.BeansException;
 

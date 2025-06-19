@@ -16,7 +16,7 @@ spring.datasource.password=yourPassword
 
 # mybatis
 mybatis.configuration.map-underscore-to-camel-case=true
-mybatis.type-aliases-package=com.geekily.geekilyArchiveStorage.geekilyCustom
+mybatis.type-aliases-package=com.geekive.geekiveArchiveStorage.geekiveCustom
 mybatis.mapper-locations=mapper/*.xml
 
 # file size

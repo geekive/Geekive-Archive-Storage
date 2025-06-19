@@ -1,13 +1,13 @@
-package com.geekily.geekilyArchiveStorage;
+package com.geekive.geekiveArchiveStorage;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GeekilyArchiveFileApplication {
+public class GeekiveArchiveFileApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GeekilyArchiveFileApplication.class, args);
+		SpringApplication.run(GeekiveArchiveFileApplication.class, args);
 	}
 
 }

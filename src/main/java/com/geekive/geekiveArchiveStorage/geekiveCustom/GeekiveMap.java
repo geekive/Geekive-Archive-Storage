@@ -1,4 +1,4 @@
-package com.geekily.geekilyArchiveStorage.geekilyCustom;
+package com.geekive.geekiveArchiveStorage.geekiveCustom;
 
 import java.util.HashMap;
 
@@ -8,19 +8,19 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.geekily.geekilyArchiveStorage.common.Util;
+import com.geekive.geekiveArchiveStorage.common.Util;
 
 
 
-public class GeekilyMap extends HashMap<String, Object>{
+public class GeekiveMap extends HashMap<String, Object>{
 	
-	public GeekilyMap() {
+	public GeekiveMap() {
 		putInitialData();
 	}
 	
 	private void putInitialData() {
 		HttpSession session = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest().getSession();
-		GeekilyMap gMap 	= (GeekilyMap) session.getAttribute("userMap");
+		GeekiveMap gMap 	= (GeekiveMap) session.getAttribute("userMap");
 		String userId		= Util.isNotEmpty(gMap) ? gMap.getString("userUid") : "";
 		this.put("userUid"		, userId);
 		this.put("resultCode"	, 1);
